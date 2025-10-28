@@ -1,6 +1,4 @@
-//We are building a cash register machine and this everything that we will be in need of.
-//Step 1: Create the basic  Object Structure
-//this is my main object - holding everything the register needs.
+// Step 1: Set up the object
 const cashRegister = {
     itemsForSale: {
         Phone: 300,
@@ -8,13 +6,9 @@ const cashRegister = {
         "Gaming Console": 150
     },
     shoppingCart: [],
-};
-//this set up:
-//-item for sale: what can we bought
-//-shoppingCart: starts empty
 
-//Step2 - add the addItem method (method to add items to cart)
-addItem(itemName) {
+    // Step 2: Add the addItem method
+    addItem(itemName) {
         if (this.itemsForSale[itemName]) {
             this.shoppingCart.push(itemName);
             console.log(`${itemName} has been added to your cart.`);
@@ -23,23 +17,24 @@ addItem(itemName) {
         }
     },
 
-//Step3- Add the CalculateTotalPrice- (we will use loop to calculate the the toal)
-calculateTotalPrice() {
-    let total = 0;
-    for (let item of this.shoppingCart) {
-        total += this.itemsForSale[item];
-    }
-    //applying discount if total > 400
-    if (total > 400) {
-        console.log("A 10% discount has been applied!");
-        total *= 0.9;
-    }
-    console.log('Total price: $${total}');
-}
+    // Step 3: Add the calculateTotalPrice method
+    calculateTotalPrice() {
+        let total = 0;
+        for (let item of this.shoppingCart) {
+            total += this.itemsForSale[item];
+        }
 
-//Step 4
-//This adding the pay method (This handles customer payment)
-pay(paymentAmount) {
+        if (total > 400) {
+            console.log("A 10% discount has been applied!");
+            total *= 0.9;
+        }
+
+        console.log(`Total price: $${total}`);
+        return total;
+    },
+
+    // Step 4: Add the pay method
+    pay(paymentAmount) {
         let total = this.calculateTotalPrice();
 
         if (paymentAmount >= total) {
@@ -54,6 +49,11 @@ pay(paymentAmount) {
         }
     }
 };
-//Testing function at console
-cashRegister.pay(500); //enough money
-cashRegister.pay(300); //not enough money
+
+// Step 5: Test the program
+cashRegister.addItem("Phone");
+cashRegister.addItem("Smart TV");
+cashRegister.addItem("Book"); // not available
+cashRegister.calculateTotalPrice();
+cashRegister.pay(500); // enough money
+cashRegister.pay(300); // not enough money
