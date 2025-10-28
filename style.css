@@ -1,0 +1,56 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #afafd2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.items button{
+    margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.items button:hover {
+    background: #0056b3;
+}
+
+.cart ul {
+    list-style: none;
+    padding: 0;
+}
+
+.payment input {
+    margin-top: 10px;
+    padding: 8px;
+    width: 70%;
+}
+
+.payment button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #28a745;
+    color: whitesmoke;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.payment button:hover {
+  background: #218838;
+}
