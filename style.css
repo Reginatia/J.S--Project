@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background: #afafd2;
+    background-image: url('images/spring.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,7 @@ body {
 }
 
 .items button:hover {
-    background: #0056b3;
+    background: #447dab;
 }
 
 .cart ul {
